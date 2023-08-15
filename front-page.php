@@ -4,11 +4,17 @@
 <section class="relative bg-softorange md:pt-32">
   <div class="text-center mb-16">
     <h1 class="text-[56px] mb-5 font-bold">
-      Hey, we’re Growth Hackers
+      <?php the_title() ?>
     </h1>
     <p class="text-gray">
-      Ready To Grow Your Startup? <br />
-      Sign up to see episodes where the experts reveal their secrets on startup growth.
+      <?php
+      if (have_posts()) {
+        while (have_posts()) {
+          the_post();
+          the_content();
+        }
+      }
+      ?>
     </p>
     <div class="h-12"></div>
     <form class="max-w-[550px] grid grid-cols-3 items-stretch justify-items-stretch text-base rounded-full p-1 bg-white mx-auto border border-smoke">
@@ -167,54 +173,21 @@
       </label>
     </div>
     <div class="filter-element grid grid-cols-4 gap-7 justify-items-stretch items-stretch text-white text-left">
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item Entertainment h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item Business h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
-      <div class="element-item People h-[262px] flex flex-col justify-end rounded-xl bg-recipes bg-cover bg-center p-5">
-        <h4 class="font-bold">Legendary Hacks of AirBnB Technology</h4>
-        <p class="">by Anant</p>
-      </div>
+      <?php
+      $recipe_args = array(
+        'post_type' => 'recipe',
+      );
+
+      $recipe_query = new WP_Query($recipe_args);
+
+      if ($recipe_query->have_posts()) {
+        while ($recipe_query->have_posts()) {
+          $recipe_query->the_post();
+          // the_title('<h1>', '</h1>');
+          get_template_part('template-parts/recipe', 'list');
+        }
+      }
+      ?>
     </div>
   </div>
 </section>
@@ -240,9 +213,16 @@
     <h2 class="text-4xl font-bold mb-16">Blog</h2>
     <div class="grid grid-row-3 grid-cols-1 items-stretch">
       <?php
-      if (have_posts()) {
-        while (have_posts()) {
-          the_post();
+      $blog_args = array(
+        'post_type' => 'post',
+      );
+
+      $blog_query = new WP_Query($blog_args);
+
+      if ($blog_query->have_posts()) {
+        while ($blog_query->have_posts()) {
+          $blog_query->the_post();
+          // the_title('<h1>', '</h1>');
           get_template_part('template-parts/blog', 'list');
         }
       }
