@@ -71,3 +71,21 @@ progressbar.addEventListener("change", dragProgressbar);
 //       ")"
 //   );
 // });
+
+// let filterForm = document.getElementById("filterby");
+
+// filterForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+// });
+
+// // filtering
+
+// // fetch data
+
+// async function filterRecipe() {
+//   const response = await fetch(
+//     "http://localhost/wordpress/wp-json/wp/v2/recipe"
+//   );
+//   const recipe = await response.json();
+//   console.log(recipe);
+// }

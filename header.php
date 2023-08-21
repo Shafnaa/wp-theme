@@ -28,8 +28,8 @@
 
 <body>
   <!-- Navbar -->
-  <header class="fixed w-full top-0 z-50">
-    <nav class="bg-transparent border-gray-200 light text-black lg:px-20">
+  <header class="fixed w-screen top-0 z-50">
+    <nav class="bg-white border-gray-200 light text-black px-2 lg:px-20">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-6">
         <a href="<?php echo get_home_url() ?>" class="flex items-center">
           <?php
@@ -49,7 +49,7 @@
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
-        <div class="hidden w-full flex flex-col md:flex-row md:flex md:items-center md:space-x-12 md:w-auto" id="navbar-default">
+        <div class="hidden w-full flex flex-col items-stretch text-center p-2 md:flex md:flex-row md:items-center md:space-x-12 md:w-auto" id="navbar-default">
 
           <?php
           wp_nav_menu(

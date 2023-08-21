@@ -228,3 +228,14 @@ input[type="range"]::-ms-fill-upper {
 input[type="range"]:focus::-ms-fill-upper {
   background: #367ebd;
 }
+
+.recipe-list {
+  height: 262px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}

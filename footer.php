@@ -1,20 +1,20 @@
 <!-- Footer -->
-<footer class="pt-20 pb-12 px-10">
-  <div class="max-w-screen-xl grid grid-cols-2 items-center bg-footer-newsletter bg-cover bg-center text-white rounded-xl mx-auto mb-20 md:px-16 md:py-14">
-    <div>
+<footer class="py-8 px-4 md:pt-20 md:pb-12 md:px-10">
+  <div class="max-w-screen-xl flex flex-col space-y-7 md:grid md:grid-cols-2 md:items-center bg-footer-newsletter bg-cover bg-center text-white rounded-xl mx-auto mb-20 py-10 px-5 md:px-16 md:py-14">
+    <div class="text-center md:text-left">
       <h3 class="text-2xl font-bold mb-3">Join Our Newsletter</h3>
       <p class="text-base">
         We’ll send you a nice letter once a week. No Spam
       </p>
     </div>
-    <form class="grid grid-cols-3 items-stretch justify-items-stretch text-base text-white rounded-full p-1 bg-white/30">
-      <input class="col-span-2 bg-transparent placeholder:text-white focus:bg-transparent focus:outline-none pl-8" type="email" placeholder="Enter your email..." />
+    <form class="flex flex-col space-y-3 md:space-y-0 md:grid md:grid-cols-3 items-stretch justify-items-stretch text-base text-white rounded-full p-1 md:bg-white/30">
+      <input class="h-12 rounded-full col-span-2 bg-white/30 placeholder:text-center md:placeholder:text-left md:bg-transparent placeholder:text-white md:focus:bg-transparent focus:outline-none md:pl-8" type="email" placeholder="Enter your email..." />
       <button type="submit" class="font-bold rounded-full py-3.5 px-9 bg-orange">
         Subscribe
       </button>
     </form>
   </div>
-  <div class="grid grid-cols-3 grid-row-2 max-w-screen-xl gap-x-40 mx-auto mb-12 px-4 pb-20 border-b-2 border-smoke">
+  <div class="grid grid-cols-1 md:grid-cols-3 grid-row-2 max-w-screen-xl gap-x-40 mx-auto mb-12 px-4 pb-20 border-b-2 border-smoke">
     <div class="">
       <a href="<?php echo get_home_url() ?>" class="flex items-center mb-5">
         <?php
@@ -33,7 +33,7 @@
         growth.
       </p>
     </div>
-    <div class="col-span-2 flex flex-row justify-between space-x-100 pt-10">
+    <div class="col-span-1 md:col-span-2 flex flex-row flex-wrap justify-between space-y-5 space-x-100 pt-10">
       <div>
         <h4 class="text-xl font-semibold mb-5">Quick Links</h4>
 

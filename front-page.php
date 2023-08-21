@@ -1,12 +1,12 @@
 <?php get_header() ?>
 
 <!-- Hero -->
-<section class="relative bg-softorange md:pt-32">
+<section class="relative bg-softorange overflow-hidden pt-24 px-4 md:pt-32">
   <div class="text-center mb-16">
-    <h1 class="text-[56px] mb-5 font-bold">
+    <h1 class="text-4xl md:text-[56px] mb-5 font-bold">
       <?php the_title() ?>
     </h1>
-    <p class="text-gray">
+    <p class="text-sm text-base text-gray">
       <?php
       if (have_posts()) {
         while (have_posts()) {
@@ -17,8 +17,8 @@
       ?>
     </p>
     <div class="h-12"></div>
-    <form class="max-w-[550px] grid grid-cols-3 items-stretch justify-items-stretch text-base rounded-full p-1 bg-white mx-auto border border-smoke">
-      <input class="col-span-2 bg-transparent placeholder:text-gray focus:bg-transparent focus:outline-none pl-8" type="email" placeholder="Enter your email..." />
+    <form class="md:max-w-[550px] flex flex-col space-y-3 md:space-y-0 md:grid md:grid-cols-3 items-stretch justify-items-stretch text-base rounded-full p-1 md:bg-white mx-auto md:border md:border-smoke">
+      <input class="h-12 md:col-span-2 md:bg-transparent placeholder:text-center md:placeholder:text-left placeholder:text-gray md:focus:bg-transparent rounded-full focus:outline-none border border-smoke md:border-0 md:pl-8" type="email" placeholder="Enter your email..." />
       <button type="submit" class="text-white font-bold rounded-full py-3.5 px-9 bg-orange">
         Sign Up
       </button>
@@ -27,24 +27,24 @@
 
   <div class="">
     <div class="flex justify-center items-end">
-      <div class="w-[360px] h-[430px] rounded-2xl border-4 border-white rotate-[-18deg] z-[0] mr-[-120px]">
+      <div class="w-[360px] h-48 md:h-[430px] rounded-2xl border-4 border-white rotate-[-18deg] z-[0] mr-[-120px]">
         <img src="https://s3-alpha-sig.figma.com/img/725c/5a75/0a4823408e096a3ac6feb4fdc4f8a348?Expires=1692576000&Signature=GRd8MAeNfK5sqRZKUXeyv6tlxp1aRwv57zeZ2jglAHNZGc8xduOs-T6fFduP8f1vCaLKtOIZcWjPugQPbPh1QsqgNCH8cEnwYfeLiMYYlzcrO1Tc39~zcPJSS6VD3G41-haZIGUvaNnpBKoxabgIYMgGe3KJzxx7-uGVid3luN-re18u87IHOGYXqrNnByn7rZ1L~ntrsD8nNDNmlC9OKYuN6tFypVFgMPnnUCf3FGAjSmAULkH8TDL89YD7p-i7UTS8UdRFgqdFMvBE3J4DOfSdZFTdIAsROikZCNDi7Wg2E1jHZ7~i~oAbU13Wu15TBVUDyMWLS3YU55XEUMBzwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" class="w-full h-full object-cover rounded-2xl" />
       </div>
-      <div class="relative p-8 z-[1]" style="
-              background-image: url('./assets/media/ipad.png');
+      <div class="relative p-3 md:p-8 z-[1]" style="
+              background-image: url('<?php echo get_template_directory_uri() ?>/assets/media/ipad.png');
               background-size: 100%;
             ">
-        <video class="w-[720px] rounded-2xl" src="./assets/media/vid.mp4" id="video"></video>
+        <video class="w-[720px] rounded-lg md:rounded-2xl" src="<?php echo get_template_directory_uri() ?>/assets/media/vid.mp4" id="video"></video>
         <div class="controls">
           <button class="btn" id="play"><i class="fas fa-play"></i></button>
           <input type="range" class="peogressbar" id="progressbar" min="0" max="100" step="0.1" value="0" />
         </div>
       </div>
-      <div class="w-[360px] h-[430px] rounded-2xl border-4 border-white rotate-[18deg] z-[0] ml-[-120px]">
+      <div class="w-[360px] h-48 md:h-[430px] rounded-2xl border-4 border-white rotate-[18deg] z-[0] ml-[-120px]">
         <img src="https://s3-alpha-sig.figma.com/img/725c/5a75/0a4823408e096a3ac6feb4fdc4f8a348?Expires=1692576000&Signature=GRd8MAeNfK5sqRZKUXeyv6tlxp1aRwv57zeZ2jglAHNZGc8xduOs-T6fFduP8f1vCaLKtOIZcWjPugQPbPh1QsqgNCH8cEnwYfeLiMYYlzcrO1Tc39~zcPJSS6VD3G41-haZIGUvaNnpBKoxabgIYMgGe3KJzxx7-uGVid3luN-re18u87IHOGYXqrNnByn7rZ1L~ntrsD8nNDNmlC9OKYuN6tFypVFgMPnnUCf3FGAjSmAULkH8TDL89YD7p-i7UTS8UdRFgqdFMvBE3J4DOfSdZFTdIAsROikZCNDi7Wg2E1jHZ7~i~oAbU13Wu15TBVUDyMWLS3YU55XEUMBzwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" class="w-full h-full object-cover rounded-2xl" />
       </div>
     </div>
-    <img src="./assets/media/rect.svg" class="w-full relative mt-[-60px] z-[2]" />
+    <img src="<?php echo get_template_directory_uri() ?>/assets/media/rect.svg" class="absolute bottom-0 w-full min-h-8 object-cover object-center z-[2]" />
   </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" width="308" height="84" viewBox="0 0 308 84" fill="none" class="absolute left-0 top-[120px]">
@@ -68,45 +68,65 @@
 </section>
 
 <!-- Episodes -->
-<section class="relative bg-white md:py-24 md:px-24">
-  <div class="swiper mySwiper max-w-screen-xl mx-auto">
-    <div class="flex flex-row justify-between items-center mb-10">
-      <h2 class="text-4xl font-bold">Latest Episodes</h2>
-      <div class="flex flex-row space-x-5">
-        <button class="swiper-prev w-12 h-12 flex justify-center items-center rounded-full border-2 border-smoke hover:bg-smoke">
+<section class="relative bg-white py-10 px-4 md:py-24 md:px-24">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="md:flex md:flex-row md:justify-between items-center mb-10">
+      <h2 class="text-xl md:text-4xl text-center md:text-left font-bold">
+        Latest Episodes
+      </h2>
+      <div class="hidden md:flex flex-row space-x-5">
+        <button id="prev-btn" class="w-12 h-12 flex justify-center items-center rounded-full border-2 border-smoke hover:bg-smoke" onclick="moveToPreviousSlide()">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M12.1569 16.0954L7.0614 10.9998L12.1569 5.9043L13.4194 7.1668L9.5864 10.9998L13.4194 14.8329L12.1569 16.0954Z" fill="#626262" />
           </svg>
         </button>
-        <button class="swiper-next w-12 h-12 flex justify-center items-center rounded-full border-2 border-orange hover:bg-orange">
+        <button id="next-btn" class="w-12 h-12 flex justify-center items-center rounded-full border-2 border-orange hover:bg-orange" onclick="moveToNextSlide()">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M9.84307 16.0954L14.9386 10.9998L9.84307 5.9043L8.58057 7.1668L12.4136 10.9998L8.58057 14.8329L9.84307 16.0954Z" fill="#FF5802" />
           </svg>
         </button>
       </div>
     </div>
-    <div class="swiper-wrapper h-[450px] rounded-2xl overflow-hidden">
-      <div class="swiper-slide h-full flex justify-items-stretch items-stretch object-contain">
-        <video class="rounded-2xl" controls="controls">
-          <source src="./assets/media/vid.mp4" type="video/mp4" />
-        </video>
+    <div class="slide-container relative h-[320px] md:h-[450px] flex rounded-2xl overflow-hidden">
+      <div class="slides h-[320px] md:h-[450px] flex rounded-2xl space-x-7">
+        <?php
+        $episode_args = array(
+          'post_type' => 'episode',
+        );
+
+        $episode_query = new WP_Query($episode_args);
+
+        if ($episode_query->have_posts()) {
+          while ($episode_query->have_posts()) {
+            $episode_query->the_post();
+            get_template_part('template-parts/episode', 'slide');
+          }
+        }
+        ?>
       </div>
-      <div class="swiper-slide h-full flex justify-items-stretch items-stretch object-contain">
-        <video class="rounded-2xl">
-          <source src="./assets/media/vid.mp4" type="video/mp4" />
-        </video>
-      </div>
+    </div>
+    <div class="flex md:hidden flex-row justify-center space-x-5 pt-4">
+      <button id="prev-btn" class="swiper-prev w-12 h-12 flex justify-center items-center rounded-full border-2 border-smoke hover:bg-smoke" onclick="moveToPreviousSlide()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M12.1569 16.0954L7.0614 10.9998L12.1569 5.9043L13.4194 7.1668L9.5864 10.9998L13.4194 14.8329L12.1569 16.0954Z" fill="#626262" />
+        </svg>
+      </button>
+      <button id="next-btn" class="swiper-next w-12 h-12 flex justify-center items-center rounded-full border-2 border-orange hover:bg-orange" onclick="moveToNextSlide()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M9.84307 16.0954L14.9386 10.9998L9.84307 5.9043L8.58057 7.1668L12.4136 10.9998L8.58057 14.8329L9.84307 16.0954Z" fill="#FF5802" />
+        </svg>
+      </button>
     </div>
   </div>
 </section>
 
 <!-- Recipes -->
-<section class="md:py-24 md:px-24">
+<section class="py-10 px-4 md:py-24 md:px-24">
   <div class="max-w-screen-xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-8">Discover Our Recipes</h2>
-    <div class="filters flex flex-row space-x-3 justify-center mb-14" id="sort-options">
+    <h2 class="text-xl md:text-4xl font-bold mb-5">Discover Our Recipes</h2>
+    <form name="filterby" action="" class="filters flex flex-row space-x-3 md:justify-center mb-14 overflow-x-auto" id="sort-options">
       <label name="filter">
-        <input type="radio" name="filter" value="all" checked />
+        <input type="radio" onchange="filteredResult(value)" name="filter" value="element-item" checked />
         <div class="filter-label">
           <div class="filter-symbol">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -117,7 +137,7 @@
         </div>
       </label>
       <label name="filter">
-        <input type="radio" name="filter" value="People" />
+        <input type="radio" onchange="filteredResult(value)" name="filter" value="People" />
         <div class="filter-label">
           <div class="filter-symbol">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -128,7 +148,7 @@
         </div>
       </label>
       <label name="filter">
-        <input type="radio" name="filter" value="Podcast" />
+        <input type="radio" onchange="filteredResult(value)" name="filter" value="Podcast" />
         <div class="filter-label">
           <div class="filter-symbol">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -139,7 +159,7 @@
         </div>
       </label>
       <label name="filter">
-        <input type="radio" name="filter" value="Blogging" />
+        <input type="radio" onchange="filteredResult(value)" name="filter" value="Blogging" />
         <div class="filter-label">
           <div class="filter-symbol">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -150,7 +170,7 @@
         </div>
       </label>
       <label name="filter">
-        <input type="radio" name="filter" value="Entertainment" />
+        <input type="radio" onchange="filteredResult(value)" name="filter" value="Entertainment" />
         <div class="filter-label">
           <div class="filter-symbol">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -161,7 +181,7 @@
         </div>
       </label>
       <label name="filter">
-        <input type="radio" name="filter" value="Business" />
+        <input type="radio" onchange="filteredResult(value)" name="filter" value="Business" />
         <div class="filter-label">
           <div class="filter-symbol">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -171,8 +191,8 @@
           <p class="mr-3">Business</p>
         </div>
       </label>
-    </div>
-    <div class="filter-element grid grid-cols-4 gap-7 justify-items-stretch items-stretch text-white text-left">
+    </form>
+    <div class="filter-element grid grid-row-4 grid-cols-2 md:grid-row-3 md:grid-cols-4 gap-7 justify-items-stretch items-stretch text-white text-left">
       <?php
       $recipe_args = array(
         'post_type' => 'recipe',
@@ -183,7 +203,6 @@
       if ($recipe_query->have_posts()) {
         while ($recipe_query->have_posts()) {
           $recipe_query->the_post();
-          // the_title('<h1>', '</h1>');
           get_template_part('template-parts/recipe', 'list');
         }
       }
@@ -193,13 +212,13 @@
 </section>
 
 <!-- CTA -->
-<section class="bg-[url('<?php echo get_template_directory_uri() ?>/assets/media/CTA.svg')] bg-cover bg-no-repeat py-36 px-10">
-  <div class="max-w-screen-xl mx-auto grid grid-cols-2 gap-7 justify-items-stretch items-center text-white">
-    <h2 class="text-4xl font-bold">
+<section class="bg-[url('<?php echo get_template_directory_uri() ?>/assets/media/CTA.svg')] bg-cover bg-center bg-no-repeat py-16 px-4 md:py-36 md:px-10">
+  <div class="max-w-screen-xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-7 justify-items-stretch md:items-center text-white text-center md:text-left">
+    <h2 class="text-xl md:text-4xl font-bold">
       Get Latest Information about Hacker Growth TV
     </h2>
-    <form class="grid grid-cols-3 items-stretch justify-items-stretch text-base text-white rounded-full p-1 bg-white/30">
-      <input class="col-span-2 bg-transparent placeholder:text-white focus:bg-transparent focus:outline-none pl-8" type="email" placeholder="Enter your email..." />
+    <form class="flex flex-col space-y-3 md:space-y-0 md:grid md:grid-cols-3 items-stretch justify-items-stretch text-base text-white rounded-full p-1 md:bg-white/30">
+      <input class="h-12 rounded-full col-span-2 bg-white/30 placeholder:text-center md:placeholder:text-left md:bg-transparent placeholder:text-white md:focus:bg-transparent focus:outline-none md:pl-8" type="email" placeholder="Enter your email..." />
       <button type="submit" class="font-bold rounded-full py-3.5 px-9 bg-orange">
         Sign Up
       </button>
@@ -208,9 +227,9 @@
 </section>
 
 <!-- Blog -->
-<section class="md:py-24 md:px-24">
+<section class="py-8 px-4 md:py-24 md:px-24">
   <div class="max-w-screen-xl mx-auto">
-    <h2 class="text-4xl font-bold mb-16">Blog</h2>
+    <h2 class="text-center md:text-left text-xl md:text-4xl font-bold mb-8 md:mb-16">Blog</h2>
     <div class="grid grid-row-3 grid-cols-1 items-stretch">
       <?php
       $blog_args = array(
@@ -222,7 +241,6 @@
       if ($blog_query->have_posts()) {
         while ($blog_query->have_posts()) {
           $blog_query->the_post();
-          // the_title('<h1>', '</h1>');
           get_template_part('template-parts/blog', 'list');
         }
       }
