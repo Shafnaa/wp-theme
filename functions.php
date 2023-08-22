@@ -38,11 +38,10 @@ add_action('wp_enqueue_scripts', 'growth_hacker_register_style');
 function growth_hacker_register_script()
 {
   wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js', array(), '3.6', true);
+  wp_enqueue_script('wp-api');
   wp_enqueue_script('script', get_template_directory_uri() . '/assets/script/script.js', array('jquery'), '1.0', true);
-  // wp_enqueue_script('swiper', '//cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), '3.6', true);
-  // wp_enqueue_script('swiper-init', get_template_directory_uri() . '/assets/script/swiper1.js', array('swiper'), '1.0', true);
   wp_enqueue_script('first-slider', get_template_directory_uri() . '/assets/script/slider1.js', array("script"), '1.0', true);
-  wp_enqueue_script('filtering', get_template_directory_uri() . '/assets/script/filter.js', array(), '1.0', true);
+  wp_enqueue_script('filtering', get_template_directory_uri() . '/assets/script/filter.js', array('wp-api'), '1.0', true);
   wp_enqueue_script('flowbite', '//cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js', array(), '1.8', true);
 }
 

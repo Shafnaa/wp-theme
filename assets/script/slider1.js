@@ -19,8 +19,6 @@ slide.prepend(lastClone);
 
 const slideWidth = 800 + 28;
 
-console.log(slideWidth);
-
 slide.style.transform = `translateX(${-slideWidth * index}px)`;
 
 const getSlides = () => document.querySelectorAll(".slide");

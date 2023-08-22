@@ -31,10 +31,10 @@
         <img src="https://s3-alpha-sig.figma.com/img/725c/5a75/0a4823408e096a3ac6feb4fdc4f8a348?Expires=1692576000&Signature=GRd8MAeNfK5sqRZKUXeyv6tlxp1aRwv57zeZ2jglAHNZGc8xduOs-T6fFduP8f1vCaLKtOIZcWjPugQPbPh1QsqgNCH8cEnwYfeLiMYYlzcrO1Tc39~zcPJSS6VD3G41-haZIGUvaNnpBKoxabgIYMgGe3KJzxx7-uGVid3luN-re18u87IHOGYXqrNnByn7rZ1L~ntrsD8nNDNmlC9OKYuN6tFypVFgMPnnUCf3FGAjSmAULkH8TDL89YD7p-i7UTS8UdRFgqdFMvBE3J4DOfSdZFTdIAsROikZCNDi7Wg2E1jHZ7~i~oAbU13Wu15TBVUDyMWLS3YU55XEUMBzwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" class="w-full h-full object-cover rounded-2xl" />
       </div>
       <div class="relative p-3 md:p-8 z-[1]" style="
-              background-image: url('<?php echo get_template_directory_uri() ?>/assets/media/ipad.png');
+              background-image: url('https://saujanashafi.studio/growth-hacker/assets/media/ipad.png');
               background-size: 100%;
             ">
-        <video class="w-[720px] rounded-lg md:rounded-2xl" src="<?php echo get_template_directory_uri() ?>/assets/media/vid.mp4" id="video"></video>
+        <video class="w-[720px] rounded-lg md:rounded-2xl" src="https://saujanashafi.studio/growth-hacker/assets/media/vid.mp4" id="video"></video>
         <div class="controls">
           <button class="btn" id="play"><i class="fas fa-play"></i></button>
           <input type="range" class="peogressbar" id="progressbar" min="0" max="100" step="0.1" value="0" />
@@ -44,7 +44,7 @@
         <img src="https://s3-alpha-sig.figma.com/img/725c/5a75/0a4823408e096a3ac6feb4fdc4f8a348?Expires=1692576000&Signature=GRd8MAeNfK5sqRZKUXeyv6tlxp1aRwv57zeZ2jglAHNZGc8xduOs-T6fFduP8f1vCaLKtOIZcWjPugQPbPh1QsqgNCH8cEnwYfeLiMYYlzcrO1Tc39~zcPJSS6VD3G41-haZIGUvaNnpBKoxabgIYMgGe3KJzxx7-uGVid3luN-re18u87IHOGYXqrNnByn7rZ1L~ntrsD8nNDNmlC9OKYuN6tFypVFgMPnnUCf3FGAjSmAULkH8TDL89YD7p-i7UTS8UdRFgqdFMvBE3J4DOfSdZFTdIAsROikZCNDi7Wg2E1jHZ7~i~oAbU13Wu15TBVUDyMWLS3YU55XEUMBzwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" class="w-full h-full object-cover rounded-2xl" />
       </div>
     </div>
-    <img src="<?php echo get_template_directory_uri() ?>/assets/media/rect.svg" class="absolute bottom-0 w-full min-h-8 object-cover object-center z-[2]" />
+    <img src="https://saujanashafi.studio/growth-hacker/assets/media/rect.svg" class="absolute bottom-0 w-full min-h-8 object-cover object-center z-[2]" />
   </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" width="308" height="84" viewBox="0 0 308 84" fill="none" class="absolute left-0 top-[120px]">
@@ -92,6 +92,7 @@
         <?php
         $episode_args = array(
           'post_type' => 'episode',
+          'posts_per_page' => 6,
         );
 
         $episode_query = new WP_Query($episode_args);
@@ -196,6 +197,7 @@
       <?php
       $recipe_args = array(
         'post_type' => 'recipe',
+        'posts_per_page' => 12,
       );
 
       $recipe_query = new WP_Query($recipe_args);
@@ -212,7 +214,7 @@
 </section>
 
 <!-- CTA -->
-<section class="bg-[url('<?php echo get_template_directory_uri() ?>/assets/media/CTA.svg')] bg-cover bg-center bg-no-repeat py-16 px-4 md:py-36 md:px-10">
+<section class="bg-[url('https://saujanashafi.studio/growth-hacker/assets/media/CTA.svg')] bg-cover bg-center bg-no-repeat py-16 px-4 md:py-36 md:px-10">
   <div class="max-w-screen-xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-7 justify-items-stretch md:items-center text-white text-center md:text-left">
     <h2 class="text-xl md:text-4xl font-bold">
       Get Latest Information about Hacker Growth TV
@@ -234,6 +236,7 @@
       <?php
       $blog_args = array(
         'post_type' => 'post',
+        'posts_per_page' => 3
       );
 
       $blog_query = new WP_Query($blog_args);

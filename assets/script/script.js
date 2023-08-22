@@ -1,7 +1,6 @@
 const playBtn = document.getElementById("play");
 const video = document.getElementById("video");
 const progressbar = document.getElementById("progressbar");
-const timestamp = document.getElementById("timestamp");
 
 //------------------------------------------------------------------------
 function toggleVideoStatus() {
@@ -27,17 +26,6 @@ function stopVideo() {
 
 function updateProgressbar() {
   progressbar.value = (video.currentTime * 100) / video.duration;
-
-  //set the time
-  let min = Math.floor(video.currentTime / 60);
-  let sec = Math.floor(video.currentTime - min * 60);
-  if (min < 10) {
-    min = "0" + String(min);
-  }
-  if (sec < 10) {
-    sec = "0" + String(sec);
-  }
-  timestamp.innerText = `${min}:${sec}`;
 }
 
 function dragProgressbar() {
@@ -51,7 +39,6 @@ video.addEventListener("click", toggleVideoStatus);
 video.addEventListener("pause", updatePlayIcon);
 video.addEventListener("play", updatePlayIcon);
 
-video.addEventListener("timeupdate", updateProgressbar);
 progressbar.addEventListener("change", dragProgressbar);
 
 // $('input[type="range"]').change(function () {
@@ -78,14 +65,14 @@ progressbar.addEventListener("change", dragProgressbar);
 //   e.preventDefault();
 // });
 
-// // filtering
+// filtering
 
-// // fetch data
+// fetch data
 
-// async function filterRecipe() {
-//   const response = await fetch(
-//     "http://localhost/wordpress/wp-json/wp/v2/recipe"
-//   );
-//   const recipe = await response.json();
-//   console.log(recipe);
-// }
+async function filterRecipe() {
+  const response = await fetch(
+    "http://localhost/wordpress/wp-json/wp/v2/recipe"
+  );
+  const recipe = await response.json();
+  console.log(recipe);
+}

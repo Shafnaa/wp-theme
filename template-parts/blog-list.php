@@ -3,7 +3,7 @@
     <div class="flex flex-row space-x-2.5 text-orange text-xs md:text-base mb-1.5">
       <div class="">by <?php the_author() ?></div>
       <div class="">•</div>
-      <div class=""><?php the_date() ?></div>
+      <div class=""><?php echo get_the_date() ?></div>
     </div>
     <a href="<?php the_permalink() ?>">
       <h3 class="text-base md:text-2xl font-semibold mb-4">
